@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -6,13 +6,19 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { Menu } from "@material-ui/icons";
-export default class AppAdmin extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
+
+
+const rootStyles = makeStyles({
+  root: {
+    background: "black",
+  },
+});
+export default function AppAdmin() {
+  const classes = rootStyles();
+  return (
+    <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -29,6 +35,6 @@ export default class AppAdmin extends Component {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-    );
-  }
+    </div>
+  );
 }
