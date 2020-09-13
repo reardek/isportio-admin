@@ -12,13 +12,9 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
-import {
-  Menu,
-  ChevronLeft,
-  ChevronRight,
-  Inbox,
-  Mail,
-} from "@material-ui/icons";
+import { Menu, ChevronLeft, ChevronRight } from "@material-ui/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import clsx from "clsx";
 
 const drawerWidth = 180;
@@ -143,10 +139,10 @@ export default function AppAdmin() {
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <Inbox /> : <Mail />}
+                <FontAwesomeIcon icon={faDumbbell} size="2em" />
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -154,10 +150,10 @@ export default function AppAdmin() {
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
+          {["All mail", "Trash", "Spam"].map((text) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <Inbox /> : <Mail />}
+                <FontAwesomeIcon icon={faDumbbell} size="2em" />
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
