@@ -1,17 +1,19 @@
 /* eslint-disable no-undef */
 import React from "react";
-//import AppAdmin from "./app";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import { render } from "react-dom";
-import "./app.scss";
+import ScopedCssBaseline from "@material-ui/core/ScopedCssBaseline";
 
-function AppAdmin() {
+import AppAdmin from "./app";
+
+//import "./app.scss";
+
+const Root = () => {
   return (
-    <Router>
-      <h1>Hello</h1>
-    </Router>
+    <ScopedCssBaseline>
+      <AppAdmin />
+    </ScopedCssBaseline>
   );
-}
+};
 
-const rootApp = document.getElementById("app");
-render(<AppAdmin />, rootApp);
+const rootApp = document.getElementById("root");
+render(<Root />, rootApp);
